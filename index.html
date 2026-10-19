@@ -589,10 +589,10 @@
   });
 
   function calculate() {
-    const deposit = Math.max(0, parseFloat(depositAmountEl.value) || 0);
+    const deposit = Math.max(0, Math.max(0, parseFloat(depositAmountEl.value) || 0));
     const months = Math.max(1, parseInt(tenancyMonthsEl.value, 10) || 1);
-    const grossRate = Math.max(0, parseFloat(interestRateEl.value) || 0) / 100;
-    const adminRate = Math.max(0, parseFloat(adminFeeEl.value) || 0) / 100;
+    const grossRate = Math.max(0, Math.max(0, parseFloat(interestRateEl.value) || 0)) / 100;
+    const adminRate = Math.max(0, Math.max(0, parseFloat(adminFeeEl.value) || 0)) / 100;
     const method = compoundingEl.value;
 
     const netRate = Math.max(0, grossRate - adminRate);
